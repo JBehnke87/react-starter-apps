@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Voting from './Voting'
-
+import {Voting} from './Voting';
 
 function App() {
   return (

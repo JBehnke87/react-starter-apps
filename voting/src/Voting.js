@@ -1,16 +1,20 @@
-import React,{Component} from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import {Vote} from './Vote'
 
-class Voting extends Component{
-	constructor(props){
-		super(props);
-		 
+export class Voting extends Component {
+
+	state = {language_list: ["JavaScript", "Python", "Go", "Java", "TypeScript", "Ruby", "Elixir"]}
+
+	incrementCount = () => {
+		this.setState({ count: this.state.count + 1 })
 	}
 
-	render(){
-		return(
-			<div> Welcome to the Voting app </div>
+	render() {
+		return (
+			<div className="languages"> <h1>Vote for a language</h1>
+				{ this.state.language_list.map(language => (<Vote name={language} />))}
+			</div>
+
 		);
 	}
 }
-export default Voting;

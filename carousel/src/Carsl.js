@@ -2,10 +2,10 @@ import './App.css';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const imageList = ["https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/jrfyzvgzvhs1iylduuhj.jpg",
-  "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/c1cklkyp6ms02tougufx.webp",
-  "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/e8fnw35p6zgusq218foj.webp",
-  "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/liw377az16sxmp9a6ylg.webp"];
+const imageList = [{ url: "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/jrfyzvgzvhs1iylduuhj.jpg", name: "Hong Kong" },
+{ url: "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/c1cklkyp6ms02tougufx.webp", name: "Singapore" },
+{ url: "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/e8fnw35p6zgusq218foj.webp", name: "Japan" },
+{ url: "https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_480,h_384/cities/liw377az16sxmp9a6ylg.webp", name: "Las Vegas" }];
 
 let styles = {
   margin: 'auto',
@@ -31,7 +31,7 @@ const Carsl = (props) => {
     <div style={styles}>
       Welcome to the Carousel..
       <Carousel>
-          { imageList.map(image => <div> <img src={image} alt="image..."/></div>) }
+        {imageList.map(image => <div> <img src={image.url} alt={image.name} /></div>)}
       </Carousel>
     </div>
   )
